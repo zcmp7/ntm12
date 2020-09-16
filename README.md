@@ -1,3 +1,4 @@
+**If you are looking for the 1.12.2 code, you have to change the branch from master to 1.12.2_test.**
 # Hbm-s-Nuclear-Tech-GIT
 
 https://minecraft.curseforge.com/projects/hbms-nuclear-tech-mod?gameCategorySlug=mc-mods&projectID=235439
