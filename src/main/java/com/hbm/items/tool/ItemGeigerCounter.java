@@ -16,8 +16,6 @@ import com.hbm.lib.Library;
 import com.hbm.saveddata.RadiationSavedData;
 import com.hbm.util.ContaminationUtil;
 
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,8 +31,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Optional;
 
-@Optional.InterfaceList({@Optional.Interface(iface = "baubles.api.IBauble", modid = "baubles")})
-public class ItemGeigerCounter extends Item implements IBauble {
+public class ItemGeigerCounter extends Item {
 	
 	public ItemGeigerCounter(String s) {
 		this.setUnlocalizedName(s);
@@ -134,15 +131,5 @@ public class ItemGeigerCounter extends Item implements IBauble {
 	@Override
 	public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
 		return !ItemStack.areItemsEqual(oldStack, newStack);
-	}
-
-	@Override
-	public BaubleType getBaubleType(ItemStack itemstack){
-		return BaubleType.TRINKET;
-	}
-
-	@Override
-	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-		onUpdate(itemstack, player.world, player, 0, true);
 	}
 }

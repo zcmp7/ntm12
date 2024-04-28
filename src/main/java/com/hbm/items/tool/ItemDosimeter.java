@@ -10,8 +10,6 @@ import com.hbm.items.gear.ArmorFSB;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.util.ContaminationUtil;
 
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,8 +21,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Optional;
 
-@Optional.InterfaceList({@Optional.Interface(iface = "baubles.api.IBauble", modid = "baubles")})
-public class ItemDosimeter extends Item implements IBauble {
+
+public class ItemDosimeter extends Item {
 	
 	Random rand = new Random();
 
@@ -83,15 +81,5 @@ public class ItemDosimeter extends Item implements IBauble {
 		}
 		
 		return super.onItemRightClick(world, player, handIn);
-	}
-
-	@Override
-	public BaubleType getBaubleType(ItemStack itemstack){
-		return BaubleType.TRINKET;
-	}
-
-	@Override
-	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-		onUpdate(itemstack, player.world, player, 0, true);
 	}
 }

@@ -10,8 +10,6 @@ import com.hbm.capability.HbmLivingProps;
 import com.hbm.util.ContaminationUtil;
 import com.hbm.lib.HBMSoundHandler;
 
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.SoundCategory;
@@ -21,8 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Optional;
 
-@Optional.InterfaceList({@Optional.Interface(iface = "baubles.api.IBauble", modid = "baubles")})
-public class ItemDigammaDiagnostic extends Item implements IBauble {
+public class ItemDigammaDiagnostic extends Item {
 
 	public ItemDigammaDiagnostic(String s) {
 		this.setUnlocalizedName(s);
@@ -86,10 +83,5 @@ public class ItemDigammaDiagnostic extends Item implements IBauble {
 				}
 			}
 		}
-	}
-
-	@Override
-	public BaubleType getBaubleType(ItemStack itemstack){
-		return BaubleType.TRINKET;
 	}
 }

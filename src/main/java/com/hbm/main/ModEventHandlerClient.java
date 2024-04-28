@@ -16,8 +16,6 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.util.glu.Project;
 
-import baubles.api.BaublesApi;
-
 import com.google.common.collect.Queues;
 import com.hbm.blocks.ILookOverlay;
 import com.hbm.blocks.ModBlocks;
@@ -1636,12 +1634,6 @@ public class ModEventHandlerClient {
 	}
 
 	public boolean hasBauble(EntityPlayer player, Item bauble){
-		try{
-			if(BaublesApi.isBaubleEquipped(player, bauble) != -1){
-				return true;
-			}
-		} catch(Throwable t){
-		}
 		return false;
 	}
 
